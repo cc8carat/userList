@@ -1,0 +1,13 @@
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  margin: 0.5rem 0;
+  border: 1px solid rgb(203, 202, 202);
+}
+
+.input label {
+  font-weight: 800;
+}
