@@ -1,18 +1,18 @@
 import Button from '../UI/Button';
 import styles from './Modal.module.css';
 
-function Modal({ closeModal }) {
+function Modal({ title, message, onClose }) {
   const { modal, backdrop, header, body, action } = styles;
   return (
-    <div className={backdrop}>
+    <div className={backdrop} onClick={onClose}>
       <div className={modal}>
         <div className={header}>
-          <div>Invalid input</div>
+          <div>{title}</div>
         </div>
         <div className={body}>
-          <p>Please enter a valid name and age (none empty values).</p>
+          <p>{message}</p>
           <div className={action}>
-            <Button type={'button'} label={'Okay'} onClick={closeModal} />
+            <Button type={'button'} label={'Okay'} onClick={onClose} />
           </div>
         </div>
       </div>
