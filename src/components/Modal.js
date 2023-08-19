@@ -1,4 +1,4 @@
-import reactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 
 import Button from '../UI/Button';
 import styles from './Modal.module.css';
@@ -27,8 +27,8 @@ const Overlay = ({ title, message, onClose }) => {
 function Modal(props) {
   return (
     <>
-      {reactDOM.createPortal(<Backdrop onClick={props.onClose} />, document.getElementById('backdrop-root'))}
-      {reactDOM.createPortal(<Overlay {...props} />, document.getElementById('overlay-root'))}
+      {createPortal(<Backdrop onClick={props.onClose} />, document.getElementById('backdrop-root'))}
+      {createPortal(<Overlay {...props} />, document.getElementById('overlay-root'))}
     </>
   );
 }
